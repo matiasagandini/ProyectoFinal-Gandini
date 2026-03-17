@@ -16,36 +16,27 @@ const NavBar = () => {
                     gap: 20,
                 }}
             >
+                {/* LOGO */}
                 <Link
                     to="/"
                     style={{
-                        textDecoration: "none",
-                        color: "inherit",
                         display: "flex",
-                        flexDirection: "column",
-                        gap: 2,
+                        alignItems: "center",
+                        gap: 10,
+                        textDecoration: "none",
                     }}
                 >
-                    <span
+                    <img
+                        src="/logo.png"
+                        alt="Rincón del Bebé"
                         style={{
-                            fontSize: 26,
-                            fontWeight: 800,
-                            letterSpacing: "-0.03em",
-                            color: "#241b2f",
+                            height: 45,
+                            objectFit: "contain",
                         }}
-                    >
-                        Rincón del Bebé
-                    </span>
-                    <span
-                        style={{
-                            fontSize: 13,
-                            color: "#7b7288",
-                        }}
-                    >
-                        Tienda online
-                    </span>
+                    />
                 </Link>
 
+                {/* LINKS */}
                 <div
                     style={{
                         display: "flex",
@@ -57,12 +48,12 @@ const NavBar = () => {
                     <NavLink
                         to="/category/panales"
                         style={({ isActive }) => ({
-                            textDecoration: "none",
                             padding: "8px 14px",
                             borderRadius: 999,
                             color: isActive ? "#6d28d9" : "#4b4453",
                             background: isActive ? "#efe7ff" : "transparent",
                             fontWeight: isActive ? 700 : 500,
+                            textDecoration: "none",
                         })}
                     >
                         Pañales
@@ -71,12 +62,12 @@ const NavBar = () => {
                     <NavLink
                         to="/category/higiene"
                         style={({ isActive }) => ({
-                            textDecoration: "none",
                             padding: "8px 14px",
                             borderRadius: 999,
                             color: isActive ? "#6d28d9" : "#4b4453",
                             background: isActive ? "#efe7ff" : "transparent",
                             fontWeight: isActive ? 700 : 500,
+                            textDecoration: "none",
                         })}
                     >
                         Higiene
@@ -85,18 +76,19 @@ const NavBar = () => {
                     <NavLink
                         to="/category/alimentacion"
                         style={({ isActive }) => ({
-                            textDecoration: "none",
                             padding: "8px 14px",
                             borderRadius: 999,
                             color: isActive ? "#6d28d9" : "#4b4453",
                             background: isActive ? "#efe7ff" : "transparent",
                             fontWeight: isActive ? 700 : 500,
+                            textDecoration: "none",
                         })}
                     >
                         Alimentación
                     </NavLink>
                 </div>
 
+                {/* CARRITO */}
                 <CartWidget />
             </nav>
         </header>
