@@ -65,7 +65,7 @@ const CheckoutForm = () => {
     if (orderId) {
         return (
             <main style={{ maxWidth: 800, margin: "0 auto", padding: "24px 16px" }}>
-                <h2>Compra realizada con éxito 🎉</h2>
+                <h2>Compra realizada con éxito</h2>
                 <p>Tu orden fue generada correctamente.</p>
                 <p>
                     <b>ID de la orden:</b> {orderId}
