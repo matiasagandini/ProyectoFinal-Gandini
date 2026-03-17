@@ -7,12 +7,16 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     const inc = () => setCount((c) => Math.min(stock, c + 1));
 
     return (
-        <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 12 }}>
-            <button onClick={dec}>-</button>
-            <span>{count}</span>
-            <button onClick={inc}>+</button>
+        <div className="count-box">
+            <button className="qty-btn" onClick={dec}>-</button>
+            <span className="qty-number">{count}</span>
+            <button className="qty-btn" onClick={inc}>+</button>
 
-            <button onClick={() => onAdd(count)} disabled={stock === 0}>
+            <button
+                className="primary-btn"
+                onClick={() => onAdd(count)}
+                disabled={stock === 0}
+            >
                 Agregar
             </button>
         </div>

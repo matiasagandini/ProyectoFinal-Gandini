@@ -13,30 +13,35 @@ const ItemDetail = ({ item }) => {
     };
 
     return (
-        <main style={{ maxWidth: 900, margin: "0 auto", padding: "24px 16px" }}>
-            <h2 style={{ marginTop: 0 }}>{item.title}</h2>
+        <main className="detail-wrap">
+            <section className="detail-card">
+                <div>
+                    <img
+                        src={item.img}
+                        alt={item.title}
+                        className="detail-image"
+                    />
+                </div>
 
-            <img
-                src={item.img}
-                alt={item.title}
-                style={{ width: "100%", maxWidth: 520, borderRadius: 12, display: "block" }}
-            />
+                <div>
+                    <h2 className="detail-title">{item.title}</h2>
+                    <p className="detail-text">{item.description}</p>
+                    <p className="detail-price">${item.price}</p>
+                    <p className="detail-stock">Stock disponible: {item.stock}</p>
 
-            <p style={{ marginTop: 12 }}>{item.description}</p>
-            <p>
-                <b>Precio:</b> ${item.price}
-            </p>
-            <p>
-                <b>Stock:</b> {item.stock}
-            </p>
-
-            {item.stock === 0 ? (
-                <p>Sin stock</p>
-            ) : quantityAdded > 0 ? (
-                <Link to="/cart">Ir al carrito</Link>
-            ) : (
-                <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
-            )}
+                    <div className="detail-actions">
+                        {item.stock === 0 ? (
+                            <p>Sin stock</p>
+                        ) : quantityAdded > 0 ? (
+                            <Link to="/cart" className="link-button">
+                                Ir al carrito
+                            </Link>
+                        ) : (
+                            <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
+                        )}
+                    </div>
+                </div>
+            </section>
         </main>
     );
 };
