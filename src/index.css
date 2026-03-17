@@ -139,12 +139,15 @@ input {
 }
 
 .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
+    background: white;
+    border: 1px solid #eadff7;
+    border-radius: 18px;
     padding: 14px;
-    box-shadow: var(--shadow);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 10px 25px rgba(120, 82, 160, 0.08);
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .card:hover {
@@ -163,27 +166,26 @@ input {
 
 .card-title {
     margin: 14px 0 8px;
-    font-size: 1.45rem;
-    line-height: 1.2;
+    font-size: 1.6rem;
+    min-height: 76px;
 }
 
 .price {
     margin: 0 0 14px;
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--primary-dark);
+    color: #7c3aed;
 }
 
 .link-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
     padding: 10px 14px;
     border-radius: 12px;
-    background: var(--surface-2);
-    color: var(--primary-dark);
+    background: #efe7ff;
+    color: #6d28d9;
     font-weight: 600;
-    transition: 0.2s ease;
+    margin-top: auto;
+    width: fit-content;
 }
 
 .link-button:hover {
