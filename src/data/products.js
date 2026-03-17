@@ -1,28 +1,40 @@
 export const products = [
     {
         id: "1",
-        title: "Remera Blanca",
-        price: 19999,
-        category: "remeras",
-        img: "https://picsum.photos/600/400?random=1",
-        description: "Remera oversize de algodón premium. Súper cómoda para todos los días.",
+        title: "Pañales Pampers XG",
+        price: 15999,
+        category: "panales",
+        stock: 8,
+        img: "https://picsum.photos/600/400?random=11",
+        description: "Pañales Pampers extra grandes, máxima absorción y comodidad."
     },
     {
         id: "2",
-        title: "Zapatillas Urban",
-        price: 59999,
-        category: "zapatillas",
-        img: "https://picsum.photos/600/400?random=2",
-        description: "Zapatillas urbanas cómodas, ideales para caminar todo el día.",
+        title: "Toallitas Húmedas",
+        price: 3999,
+        category: "higiene",
+        stock: 15,
+        img: "https://picsum.photos/600/400?random=12",
+        description: "Toallitas húmedas hipoalergénicas para piel sensible."
     },
     {
         id: "3",
-        title: "Gorra Negra",
-        price: 9999,
-        category: "accesorios",
-        img: "https://picsum.photos/600/400?random=3",
-        description: "Gorra clásica ajustable, combinable con todo.",
+        title: "Mamadera Anticólicos",
+        price: 6999,
+        category: "alimentacion",
+        stock: 6,
+        img: "https://picsum.photos/600/400?random=13",
+        description: "Mamadera con sistema anticólicos y tetina de silicona."
     },
+    {
+        id: "4",
+        title: "Crema para Rozaduras",
+        price: 4999,
+        category: "higiene",
+        stock: 10,
+        img: "https://picsum.photos/600/400?random=14",
+        description: "Crema protectora contra irritaciones y rozaduras."
+    }
 ];
 
 // Promises con retardo (como pide la consigna)

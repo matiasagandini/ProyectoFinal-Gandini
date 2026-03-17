@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getProductById } from "../data/products";
+import { getProductById } from "../services/firebase/firestore";
 import ItemDetail from "../components/ItemDetail";
 
 const ItemDetailContainer = () => {

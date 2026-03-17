@@ -1,9 +1,15 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
+import { useCart } from "../context/CartContext";
 
 const ItemDetail = ({ item }) => {
+    const [quantityAdded, setQuantityAdded] = useState(0);
+    const { addItem } = useCart();
+
     const onAdd = (qty) => {
-        // Por ahora solo mostramos en consola (carrito viene después)
-        console.log("Agregar:", item.title, "Cantidad:", qty);
+        setQuantityAdded(qty);
+        addItem(item, qty);
     };
 
     return (
@@ -20,8 +26,17 @@ const ItemDetail = ({ item }) => {
             <p>
                 <b>Precio:</b> ${item.price}
             </p>
+            <p>
+                <b>Stock:</b> {item.stock}
+            </p>
 
-            <ItemCount stock={10} initial={1} onAdd={onAdd} />
+            {item.stock === 0 ? (
+                <p>Sin stock</p>
+            ) : quantityAdded > 0 ? (
+                <Link to="/cart">Ir al carrito</Link>
+            ) : (
+                <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
+            )}
         </main>
     );
 };

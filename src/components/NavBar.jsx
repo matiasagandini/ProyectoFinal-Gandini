@@ -24,18 +24,20 @@ const NavBar = () => {
                 }}
             >
                 <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-                    <h1 style={{ margin: 0, fontSize: 20 }}>Damasco Hombres</h1>
+                    <h1 style={{ margin: 0, fontSize: 20 }}>Rincon del bebe</h1>
                 </Link>
 
                 <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-                    <NavLink to="/category/remeras" style={linkStyle}>
-                        Remeras
+                    <NavLink to="/category/panales" style={linkStyle}>
+                        Pañales
                     </NavLink>
-                    <NavLink to="/category/zapatillas" style={linkStyle}>
-                        Zapatillas
+
+                    <NavLink to="/category/higiene" style={linkStyle}>
+                        Higiene
                     </NavLink>
-                    <NavLink to="/category/accesorios" style={linkStyle}>
-                        Accesorios
+
+                    <NavLink to="/category/alimentacion" style={linkStyle}>
+                        Alimentación
                     </NavLink>
                 </div>
 

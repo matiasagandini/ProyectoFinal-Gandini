@@ -5,8 +5,10 @@
 body {
     margin: 0;
     font-family: system-ui, Arial, sans-serif;
+    background-color: #f9f5ff;
 }
 
 a {
     color: inherit;
 }
+

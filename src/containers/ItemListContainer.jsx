@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../components/ItemList";
-import { getProducts, getProductsByCategory } from "../data/products";
+import { getProducts, getProductsByCategory } from "../services/firebase/firestore";
 
 const ItemListContainer = ({ greeting }) => {
     const { categoryId } = useParams();
@@ -24,7 +24,13 @@ const ItemListContainer = ({ greeting }) => {
                 {categoryId ? `Categoría: ${categoryId}` : greeting}
             </h2>
 
-            {loading ? <p>Cargando...</p> : <ItemList items={items} />}
+            {loading ? (
+                <p style={{ textAlign: "center", padding: 20 }}>
+                    Cargando productos...
+                </p>
+            ) : (
+                <ItemList items={items} />
+            )}
         </main>
     );
 };
