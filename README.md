@@ -1,39 +1,36 @@
-# Proyecto Final - Gandini
+# Proyecto Final - E-commerce React
 
-Aplicación e-commerce desarrollada con React como entrega final del curso.
+Aplicación web de e-commerce desarrollada con React como proyecto final del curso.
 
 ## Funcionalidades
 
-* Listado de productos desde Firebase Firestore
-* Filtrado por categorías
-* Vista en detalle de cada producto
-* Selector de cantidad con control de stock
-* Carrito de compras con Context API
-* Checkout con generación de orden
-* Guardado de órdenes en Firestore
-* Renderizado condicional (loading, carrito vacío, sin stock)
+- Listado de productos
+- Filtrado por categorías
+- Vista de detalle de cada producto
+- Agregado de productos al carrito
+- Carrito con cálculo de totales
+- Formulario de checkout
+- Generación de orden de compra
 
 ## Tecnologías utilizadas
 
-* React
-* React Router DOM
-* Firebase / Firestore
-* CSS
+- React
+- React Router DOM
+- Context API
+- Firebase (Firestore)
+- CSS
 
-## Instalación
+## Base de datos
 
-```bash
-git clone https://github.com/matiasagandini/ProyectoFinalGandini.git
-npm install
-npm run dev
-```
+Se utilizó Firebase Firestore para:
+- Almacenar los productos
+- Guardar las órdenes de compra
 
 ## Deploy
 
-Aplicación online:
+La aplicación está desplegada en Vercel:
 https://proyecto-final-gandini.vercel.app/
 
-## Notas
+## Autor
 
-* Los productos se obtienen desde Firebase Firestore
-* Las órdenes de compra se almacenan en la colección "orders"
+Matías Gandini
