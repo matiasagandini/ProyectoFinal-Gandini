@@ -7,27 +7,36 @@ const Cart = () => {
 
     if (cart.length === 0) {
         return (
-            <main style={{ maxWidth: 1100, margin: "0 auto", padding: "24px 16px" }}>
-                <h2>Tu carrito está vacío</h2>
-                <Link to="/">Ir a comprar</Link>
+            <main className="cart-page">
+                <h2 className="cart-title">Tu carrito está vacío</h2>
+                <Link to="/" className="secondary-link">Ir a comprar</Link>
             </main>
         );
     }
 
     return (
-        <main style={{ maxWidth: 1100, margin: "0 auto", padding: "24px 16px" }}>
-            <h2>Carrito</h2>
+        <main className="cart-page">
+            <h2 className="cart-title">Carrito</h2>
 
-            {cart.map((prod) => (
-                <CartItem key={prod.id} item={prod} />
-            ))}
-
-            <h3>Total: ${getTotalPrice()}</h3>
-
-            <div style={{ display: "flex", gap: 12 }}>
-                <button onClick={clearCart}>Vaciar carrito</button>
-                <Link to="/checkout">Finalizar compra</Link>
+            <div className="cart-list">
+                {cart.map((prod) => (
+                    <CartItem key={prod.id} item={prod} />
+                ))}
             </div>
+
+            <section className="cart-summary">
+                <p className="cart-total">Total: ${getTotalPrice()}</p>
+
+                <div className="cart-buttons">
+                    <button className="danger-btn" onClick={clearCart}>
+                        Vaciar carrito
+                    </button>
+
+                    <Link to="/checkout" className="secondary-link">
+                        Finalizar compra
+                    </Link>
+                </div>
+            </section>
         </main>
     );
 };

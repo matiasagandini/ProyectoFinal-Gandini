@@ -4,19 +4,14 @@ const CartItem = ({ item }) => {
     const { removeItem } = useCart();
 
     return (
-        <article
-            style={{
-                border: "1px solid #ddd",
-                borderRadius: 12,
-                padding: 16,
-                marginBottom: 12,
-            }}
-        >
-            <h3>{item.title}</h3>
-            <p>Precio unitario: ${item.price}</p>
-            <p>Cantidad: {item.quantity}</p>
-            <p>Subtotal: ${item.price * item.quantity}</p>
-            <button onClick={() => removeItem(item.id)}>Eliminar</button>
+        <article className="cart-item">
+            <h3 className="cart-item-title">{item.title}</h3>
+            <p className="cart-item-text">Precio unitario: ${item.price}</p>
+            <p className="cart-item-text">Cantidad: {item.quantity}</p>
+            <p className="cart-item-text">Subtotal: ${item.price * item.quantity}</p>
+            <button className="danger-btn" onClick={() => removeItem(item.id)}>
+                Eliminar
+            </button>
         </article>
     );
 };

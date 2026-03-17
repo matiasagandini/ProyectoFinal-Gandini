@@ -5,8 +5,9 @@ const NavBar = () => {
     return (
         <header className="navbar">
             <nav className="navbar-inner">
-                <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-                    <h1 style={{ margin: 0, fontSize: 20 }}>Rincon del bebe</h1>
+                <Link to="/" className="brand-box">
+                    <h1 className="brand-title">Rincon del bebe</h1>
+                    <span className="brand-subtitle">Cuidado, higiene y alimentación</span>
                 </Link>
 
                 <div className="nav-links">
