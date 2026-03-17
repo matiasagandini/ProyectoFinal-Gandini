@@ -7,36 +7,85 @@ const Cart = () => {
 
     if (cart.length === 0) {
         return (
-            <main className="cart-page">
-                <h2 className="cart-title">Tu carrito está vacío</h2>
-                <Link to="/" className="secondary-link">Ir a comprar</Link>
+            <main style={{ maxWidth: 1100, margin: "0 auto", padding: "32px 16px" }}>
+                <h2 style={{ marginBottom: 16 }}>Tu carrito está vacío</h2>
+                <Link
+                    to="/"
+                    style={{
+                        padding: "10px 16px",
+                        borderRadius: 12,
+                        background: "#efe7ff",
+                        color: "#6d28d9",
+                        fontWeight: 600,
+                    }}
+                >
+                    Ir a comprar
+                </Link>
             </main>
         );
     }
 
     return (
-        <main className="cart-page">
-            <h2 className="cart-title">Carrito</h2>
+        <main style={{ maxWidth: 1100, margin: "0 auto", padding: "32px 16px" }}>
+            <h2 style={{ marginBottom: 20 }}>Carrito</h2>
 
-            <div className="cart-list">
+            <div style={{ display: "grid", gap: 16 }}>
                 {cart.map((prod) => (
                     <CartItem key={prod.id} item={prod} />
                 ))}
             </div>
 
-            <section className="cart-summary">
-                <p className="cart-total">Total: ${getTotalPrice()}</p>
+            <div
+                style={{
+                    marginTop: 24,
+                    padding: 20,
+                    borderRadius: 16,
+                    background: "#ffffff",
+                    border: "1px solid #eadff7",
+                }}
+            >
+                <p
+                    style={{
+                        fontSize: 20,
+                        fontWeight: 700,
+                        color: "#6d28d9",
+                        marginBottom: 16,
+                    }}
+                >
+                    Total: ${getTotalPrice()}
+                </p>
 
-                <div className="cart-buttons">
-                    <button className="danger-btn" onClick={clearCart}>
+                <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+                    <button
+                        onClick={clearCart}
+                        style={{
+                            padding: "10px 16px",
+                            borderRadius: 12,
+                            border: "none",
+                            background: "#f3e8ff",
+                            color: "#6d28d9",
+                            fontWeight: 600,
+                            cursor: "pointer",
+                        }}
+                    >
                         Vaciar carrito
                     </button>
 
-                    <Link to="/checkout" className="secondary-link">
+                    <Link
+                        to="/checkout"
+                        style={{
+                            padding: "10px 16px",
+                            borderRadius: 12,
+                            background: "#6d28d9",
+                            color: "white",
+                            fontWeight: 700,
+                            textDecoration: "none",
+                        }}
+                    >
                         Finalizar compra
                     </Link>
                 </div>
-            </section>
+            </div>
         </main>
     );
 };
