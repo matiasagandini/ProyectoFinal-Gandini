@@ -19,20 +19,18 @@ const ItemListContainer = ({ greeting }) => {
     }, [categoryId]);
 
     return (
-        <main style={{ maxWidth: 1100, margin: "0 auto", padding: "24px 16px" }}>
-            <h2 style={{ marginTop: 0 }}>
-                {categoryId ? `Categoría: ${categoryId}` : greeting}
-            </h2>
+    <main className="container page-section">
+        <h2 className="page-title">
+            {categoryId ? `Categoría: ${categoryId}` : greeting}
+        </h2>
 
-            {loading ? (
-                <p style={{ textAlign: "center", padding: 20 }}>
-                    Cargando productos...
-                </p>
-            ) : (
-                <ItemList items={items} />
-            )}
-        </main>
-    );
+        {loading ? (
+            <p className="loader-text">Cargando productos...</p>
+        ) : (
+            <ItemList items={items} />
+        )}
+    </main>
+);
 };
 
 export default ItemListContainer;
